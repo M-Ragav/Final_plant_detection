@@ -1,1 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.image-box {
+    border: 2px solid #ccc;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.result-box {
+    margin-top: 20px;
+    text-align: center;
+}
