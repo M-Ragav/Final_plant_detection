@@ -9,62 +9,83 @@ from PIL import Image
 
 
 medical_uses = {
-'Neem':"""
-Antimicrobial: Treats infections with antibacterial and antifungal properties.
-Anti-Inflammatory: Reduces inflammation, aiding conditions like arthritis.
-Blood Sugar Regulation: Helps lower blood sugar levels for diabetes management.
-Skin Health: Treats acne and skin conditions due to its soothing effects.
-Immune Support: Boosts the immune system and aids detoxification.""",
-
-'Aloe Vera':
-"""
-Skin Healing: Promotes wound healing and soothes burns and cuts.
-Moisturizer: Hydrates skin and treats dry skin conditions.
-Anti-Inflammatory: Reduces inflammation and discomfort from conditions like arthritis.
-Digestive Aid: Supports digestive health and alleviates constipation.
-Immune Booster: Enhances immune function and helps detoxify the body.""",
-
-'Tulsi':
-"""
-Stress Relief: Reduces stress and anxiety by balancing cortisol levels.
-Anti-Inflammatory: Helps alleviate inflammation and pain in the body.
-Respiratory Health: Eases respiratory issues like asthma and bronchitis.
-Antimicrobial: Fights infections with its antibacterial and antiviral properties.
-Blood Sugar Control: Supports healthy blood sugar levels and aids in diabetes management.
-""",
-
-'Jasmine':
-"""
-Aromatherapy: Used for its calming scent to reduce stress and anxiety.
-Skin Care: Helps improve skin elasticity and treats minor skin irritations.
-Menstrual Relief: Alleviates menstrual cramps and promotes regular cycles.
-Antidepressant: Acts as a natural mood enhancer, combating feelings of depression.
-Sleep Aid: Promotes restful sleep and helps manage insomnia.""",
-
-'Mango':
-"""Rich in Nutrients: Packed with vitamins A, C, and E, supporting overall health and immunity.
-Digestive Health: Aids digestion and alleviates constipation due to its fiber content.
-Skin Care: Promotes healthy skin and may help treat acne and blemishes.
-Eye Health: Supports eye health and vision due to high levels of beta-carotene.
-Antioxidant Properties: Contains antioxidants that combat free radicals and reduce inflammation.""",
-
-'Drumstick':
-"""Nutrient-Rich: High in vitamins, minerals, and amino acids, supporting overall health.
-Anti-Inflammatory: Reduces inflammation and may help with conditions like arthritis.
-Blood Sugar Control: Helps lower blood sugar levels, beneficial for diabetes management.
-Antioxidant Properties: Contains antioxidants that protect against oxidative stress.
-Digestive Health: Supports digestive health and may alleviate constipation.""",
-
-'Gauva':
-"""
-High in Vitamin C: Boosts the immune system and helps fight infections.
-Digestive Aid: Rich in fiber, it promotes healthy digestion and relieves constipation.
-Antioxidant Properties: Contains antioxidants that protect against cellular damage.
-Skin Health: May improve skin texture and treat acne due to its antibacterial properties.
-Blood Sugar Regulation: Supports healthy blood sugar levels, beneficial for diabetes management""",
-
-'Unknown':
-""" Try with a clear image!!"""
+    'Aloe Vera': """Used for skin healing, digestion, and moisturizing properties.""",
+    'Amla': """Rich in vitamin C, it boosts immunity and supports skin health.""",
+    'Amruthaballi': """Known for its immune-boosting properties and detox benefits.""",
+    'Arali': """Traditionally used for its anti-inflammatory effects.""",
+    'Astma_weed': """Used for respiratory health and as an anti-inflammatory.""",
+    'Badipala': """Used in traditional remedies for its digestive benefits.""",
+    'Balloon_Vine': """Supports digestive health and is used in traditional remedies.""",
+    'Bamboo': """Known for its nutritional benefits and structural uses.""",
+    'Beans': """High in protein and fiber, supporting overall health.""",
+    'Betel': """Used for digestive issues and oral health benefits.""",
+    'Bhrami': """Supports cognitive function and mental clarity.""",
+    'Bringaraja': """Traditionally used for hair health and liver support.""",
+    'Caricature': """Rich in vitamins, it supports overall health and digestion.""",
+    'Castor': """Known for its laxative properties and skin benefits.""",
+    'Catharanthus': """Used for its benefits in managing diabetes and blood pressure.""",
+    'Chakte': """Has various medicinal properties and is used in traditional remedies.""",
+    'Chilly': """Boosts metabolism and has antioxidant properties.""",
+    'Citron lime': """Supports digestive health and is rich in vitamin C.""",
+    'Coffee': """Known for its stimulating effects and antioxidants.""",
+    'Common rue': """Used in traditional medicine for digestive issues.""",
+    'Coriender': """Rich in nutrients and has antioxidant properties.""",
+    'Curry': """Supports digestion and has anti-inflammatory properties.""",
+    'Doddpathre': """Used for its medicinal properties in traditional remedies.""",
+    'Drumstick': """Nutrient-dense, supports overall health and wellness.""",
+    'Ekka': """Known for its health benefits and traditional uses.""",
+    'Eucalyptus': """Supports respiratory health and has antiseptic properties.""",
+    'Ganigale': """Used for digestive issues and overall wellness.""",
+    'Ganike': """Known for its benefits in traditional medicine.""",
+    'Gasagase': """Supports digestive health and is used in various remedies.""",
+    'Ginger': """Known for its anti-nausea and digestive benefits.""",
+    'Globe Amarnath': """Rich in nutrients, supports overall health and wellness.""",
+    'Guava': """Rich in vitamin C, supports immune health and digestion.""",
+    'Henna': """Used for skin health and has cooling properties.""",
+    'Hibiscus': """Supports heart health and is rich in antioxidants.""",
+    'Honge': """Used for its health benefits and traditional remedies.""",
+    'Insulin': """Helps manage diabetes and blood sugar levels.""",
+    'Jackfruit': """Rich in nutrients and supports digestive health.""",
+    'Jasmine': """Used for its calming effects and skin benefits.""",
+    'Kambajala': """Traditionally used for its medicinal properties.""",
+    'Kasambruga': """Known for its benefits in traditional remedies.""",
+    'Kohlrabi': """Rich in nutrients and supports overall health.""",
+    'Lantana': """Used for its benefits in traditional medicine.""",
+    'Lemon': """Rich in vitamin C, supports immune health and digestion.""",
+    'Lemongrass': """Supports digestion and has calming effects.""",
+    'Malabar_Nut': """Used for its health benefits in traditional remedies.""",
+    'Malabar_Spinach': """Rich in nutrients and supports overall health.""",
+    'Mango': """Rich in vitamins, supports immune health and digestion.""",
+    'Marigold': """Known for its skin benefits and anti-inflammatory properties.""",
+    'Mint': """Supports digestion and has calming effects.""",
+    'Neem': """Used for its antiseptic and medicinal properties.""",
+    'Nelavembu': """Known for its detoxifying properties and traditional uses.""",
+    'Nerale': """Used for its benefits in traditional medicine.""",
+    'Nooni': """Known for its health benefits in traditional remedies.""",
+    'Onion': """Rich in antioxidants, supports heart health and digestion.""",
+    'Padri': """Used for its medicinal properties in traditional remedies.""",
+    'Palak': """Rich in iron and vitamins, supports overall health.""",
+    'Papaya': """Rich in nutrients, supports digestion and skin health.""",
+    'Parijatha': """Known for its calming effects and traditional uses.""",
+    'Pea': """Rich in protein and nutrients, supports overall health.""",
+    'Pepper': """Supports digestion and has antioxidant properties.""",
+    'Pomoegranate': """Rich in antioxidants, supports heart health and digestion.""",
+    'Pumpkin': """Rich in vitamins and supports immune health.""",
+    'Raddish': """Supports digestion and has antioxidant properties.""",
+    'Rose': """Known for its skin benefits and calming properties.""",
+    'Sampige': """Used for its fragrance and medicinal properties.""",
+    'Sapota': """Rich in nutrients, supports overall health and digestion.""",
+    'Seethaashoka': """Used in traditional medicine for various health benefits.""",
+    'Sesame': """Rich in nutrients, supports heart health, and is good for skin health.""",
+    'Sida': """Used for its digestive benefits and is traditionally used in various remedies.""",
+    'Soursop': """Rich in vitamins, it supports overall health and has antioxidant properties.""",
+    'Spinach': """Rich in vitamins and minerals, it supports overall health and boosts immunity.""",
+    'Tulsi': """Known for its immune-boosting properties and is used in traditional remedies.""",
+    'Turmeric': """Anti-Inflammatory: Reduces inflammation, helping with conditions like arthritis.""",
+    'Vacha': """Used in traditional remedies for digestive issues and cognitive health.""",
+    'Vasaka': """Known for its benefits in respiratory health and is traditionally used in treating coughs.""",
+    'Vettiver': """Used for its cooling properties and is beneficial for skin health.""",
+    'Unknown':""" Try with a clear image!!"""
 }
 
 
@@ -110,7 +131,7 @@ def identify_plant():
         class_name = get_class_name(class_index)
 
         # Retrieve medical use from the database
-        medical_use = medical_use[class_name]
+        medical_use = medical_uses[class_name]
 
         return jsonify({'class_name': class_name, 'medical_use': medical_use})
     except Exception as e:
@@ -119,7 +140,82 @@ def identify_plant():
 
 # Function to map class indices to plant names
 def get_class_name(index):
-    class_names = ['Aloe Vera', 'Neem', 'Tulsi', 'Jasmine', 'Mango', 'Drumstick', 'Guava']  # Update with your actual class names
+    class_names = ["Aloe Vera",
+    "Amla",
+    "Amruthaballi",
+    "Arali",
+    "Astma_weed",
+    "Badipala",
+    "Balloon_Vine",
+    "Bamboo",
+    "Beans",
+    "Betel",
+    "Bhrami",
+    "Bringaraja",
+    "Caricature",
+    "Castor",
+    "Catharanthus",
+    "Chakte",
+    "Chilly",
+    "Citron lime",
+    "Coffee",
+    "Common rue",
+    "Coriender",
+    "Curry",
+    "Doddpathre",
+    "Drumstick",
+    "Ekka",
+    "Eucalyptus",
+    "Ganigale",
+    "Ganike",
+    "Gasagase",
+    "Ginger",
+    "Globe Amarnath",
+    "Guava",
+    "Henna",
+    "Hibiscus",
+    "Honge",
+    "Insulin",
+    "Jackfruit",
+    "Jasmine",
+    "Kambajala",
+    "Kasambruga",
+    "Kohlrabi",
+    "Lantana",
+    "Lemon",
+    "Lemongrass",
+    "Malabar_Nut",
+    "Malabar_Spinach",
+    "Mango",
+    "Marigold",
+    "Mint",
+    "Neem",
+    "Nelavembu",
+    "Nerale",
+    "Nooni",
+    "Onion",
+    "Padri",
+    "Palak",
+    "Papaya",
+    "Parijatha",
+    "Pea",
+    "Pepper",
+    "Pomoegranate",
+    "Pumpkin",
+    "Raddish",
+    "Rose",
+    "Sampige",
+    "Sapota",
+    "Seethaashoka",
+    "Sesame",
+    "Sida",
+    "Soursop",
+    "Spinach",
+    "Tulsi",
+    "Turmeric",
+    "Vacha",
+    "Vasaka",
+    "Vettiver"]  # Update with your actual class names
     return class_names[index] if index < len(class_names) else "Unknown"
 
 # Run the Flask app
