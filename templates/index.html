@@ -89,9 +89,14 @@
 
     <!-- Button to capture image -->
     <div style="text-align: center;">
-        <button id="captureButton">Capture Plant Image</button>
+        <button id="captureButton">Capture</button>
         <button id="clearButton">Clear</button>
     </div>
+    <!-- Add this below your result div -->
+<div id="processingMessage" style="display: none; text-align: center; font-size: 18px; color: #333; margin-top: 20px;">
+    Processing...
+</div>
+
 
     <!-- Display results after identification -->
     <div id="result">
@@ -156,6 +161,8 @@
             document.getElementById('capturedImage').style.display = 'block'; // Show the captured image
             document.getElementById('video').style.display = 'none'; // Hide the video element
 
+            document.getElementById('processingMessage').style.display = 'block';
+
             // Stop the video stream
             const tracks = currentStream.getTracks();
             tracks.forEach(track => track.stop());
@@ -170,11 +177,14 @@
             })
             .then(response => response.json())
             .then(data => {
-                document.getElementById('plantName').textContent = data.class_name || "Unknown";
-                document.getElementById('medicalUse').textContent = data.medical_use || "Not found";
+                document.getElementById('processingMessage').style.display = 'none';
+
+                document.getElementById('plantName').textContent = data.class_name;
+                document.getElementById('medicalUse').textContent = data.medical_use;
             })
             .catch(err => {
                 console.error("Error identifying plant:", err);
+                document.getElementById('processingMessage').style.display = 'none';
             });
         });
 
