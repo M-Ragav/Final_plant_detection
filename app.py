@@ -94,7 +94,7 @@ app = Flask(__name__)
 
 # Load the pre-trained model
 try:
-    model = load_model('model/plant_model.h5')  # Replace with your actual model path
+    model = load_model('plant_model.h5')  # Replace with your actual model path
     print("Model loaded successfully.")
 except Exception as e:
     print(f"Error loading model: {e}")
